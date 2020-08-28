@@ -829,7 +829,7 @@ Responsibilities
     <coordinates>
       <x>2651</x>
       <y>726</y>
-      <w>385</w>
+      <w>759</w>
       <h>176</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
@@ -841,7 +841,7 @@ InvestmentRound
 +description: String(NotBlank)
 +amount: Money {Valid, NotNull}
 +moreInfo: String(NotBlank)
-+kindRound: String(NotBlank)
++kindRound: String(NotBlank, Pattern(regexp = "^(SEED|ANGEL|SERIESA|SERIESB|SERIESC|BRIDGE)"))
 
 </panel_attributes>
     <additional_attributes/>
@@ -868,7 +868,7 @@ Activity
     <coordinates>
       <x>2717</x>
       <y>495</y>
-      <w>231</w>
+      <w>286</w>
       <h>99</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
@@ -1016,5 +1016,19 @@ has &gt;</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;100.0;10.0;10.0;1120.0;10.0;1120.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2860</x>
+      <y>913</y>
+      <w>55</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+has</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
 </diagram>
