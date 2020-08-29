@@ -85,6 +85,8 @@
 			<acme:menu-suboption code="master.menu.authenticated.overture.actives" action="/authenticated/overture/list-active" />
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.authenticated.challenge.actives" action="/authenticated/challenge/list-active" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.authenticated.challenge.investment-round" action="/authenticated/investment-round/list-active" />
 		</acme:menu-option>
 
 	</acme:menu-left>

@@ -85,6 +85,7 @@ master.menu.authenticated.tool.bySector = Tools by sector
 master.menu.authenticated.inquiry.actives = Active inquiries
 master.menu.authenticated.overture.actives = Active overtures
 master.menu.authenticated.challenge.actives = Active challenges
+master.menu.authenticated.challenge.investment-round = Active Investment Rounds
 
 # master.menu.user-account ####################################################
 

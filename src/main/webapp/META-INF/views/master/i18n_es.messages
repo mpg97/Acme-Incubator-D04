@@ -95,6 +95,7 @@ master.menu.authenticated.tool.bySector = Herramientas por sector
 master.menu.authenticated.inquiry.actives = Investigaciones activas
 master.menu.authenticated.overture.actives = Propuestas activas
 master.menu.authenticated.challenge.actives = Desafios activos
+master.menu.authenticated.challenge.investment-round = Rondas de inversión activas
 
 
 # master.menu.user-account ####################################################
