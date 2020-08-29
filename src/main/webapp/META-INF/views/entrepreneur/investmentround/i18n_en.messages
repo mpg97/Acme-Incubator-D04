@@ -1,0 +1,38 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+entrepreneur.investment-round.form.label.ticker = Ticker
+entrepreneur.investment-round.form.label.creationDate = Creation Date
+entrepreneur.investment-round.form.label.title = Title
+entrepreneur.investment-round.form.label.description = Description
+entrepreneur.investment-round.form.label.amount = Amount
+entrepreneur.investment-round.form.label.moreInfo = More Info
+entrepreneur.investment-round.form.label.kindRound = Kind of Round
+entrepreneur.investment-round.form.label.entrepreneur.startUpName = Entrepreneur StartUp Name
+entrepreneur.investment-round.form.button.return = Return
+
+entrepreneur.investment-round.list.label.ticker = Ticker
+entrepreneur.investment-round.list.label.creationDate = Creation Date
+entrepreneur.investment-round.list.label.title = Title
+entrepreneur.investment-round.list.label.description = Description
+entrepreneur.investment-round.list.label.amount = Amount
+entrepreneur.investment-round.list.label.moreInfo = More Info
+entrepreneur.investment-round.list.label.kindRound = Kind of Round
+entrepreneur.investment-round.list.label.entrepreneur.startUpName = Entrepreneur StartUp Name
+
+entrepreneur.investment-round.finalMode = Is final mode
+
+
+entrepreneur.application.form.label.status.seed = Seed
+entrepreneur.application.form.label.status.bridge = Bridge
+entrepreneur.application.form.label.status.seriesa = Series A
+entrepreneur.application.form.label.status.seriesb = Series B
+entrepreneur.application.form.label.status.seriesc = Series C
+entrepreneur.application.form.label.status.angel = Angel

@@ -1,0 +1,24 @@
+
+package acme.features.entrepreneur.application;
+
+import java.util.Collection;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import acme.entities.application.Application;
+import acme.framework.repositories.AbstractRepository;
+
+@Repository
+public interface EntrepreneurApplicationRepository extends AbstractRepository {
+
+	@Query("select t from Application t")
+	Collection<Application> findAllApplication();
+
+	@Query("select t from Application t where t.id = ?1")
+	Application findApplicationById(int id);
+
+	@Query("select t from Application t where t.investmentRound.entrepreneur.id = ?1")
+	Collection<Application> findApplicationByEntrepenurId(int id);
+
+}

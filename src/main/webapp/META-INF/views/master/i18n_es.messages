@@ -38,6 +38,15 @@ master.menu.anonymous.tool = Herramientas
 master.menu.anonymous.tool.byStars = Herramientas por estrellas
 master.menu.anonymous.tool.bySector = Herramientas por sector
 
+# master.menu.entrepreneur ########################################################
+
+master.menu.entrepreneur = Emprendedor
+master.menu.entrepreneur.investment-round =  Rondas de inversión registradas
+master.menu.entrepreneur.investment-round.create =  Crear una ronda de inversión
+master.menu.entrepreneur.application = Solicitudes
+master.menu.entrepreneur.activity = Actividades
+master.menu.entrepreneur.work-programme = Programma de trabajo
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador

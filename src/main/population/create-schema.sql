@@ -1,4 +1,16 @@
 
+    create table `activity` (
+       `id` integer not null,
+        `version` integer not null,
+        `budget_amount` double precision,
+        `budget_currency` varchar(255),
+        `end` datetime(6),
+        `start` datetime(6),
+        `title` varchar(255),
+        `work_programme_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `administrator` (
        `id` integer not null,
         `version` integer not null,
@@ -10,6 +22,21 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `application` (
+       `id` integer not null,
+        `version` integer not null,
+        `creation` datetime(6),
+        `justification` varchar(255),
+        `money_offer_amount` double precision,
+        `money_offer_currency` varchar(255),
+        `statement` varchar(255),
+        `status` varchar(255),
+        `ticker` varchar(255),
+        `investment_round_id` integer not null,
+        `investor_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -59,6 +86,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `consumer` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `company` varchar(255),
+        `sector` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `debate` (
        `id` integer not null,
         `version` integer not null,
@@ -71,6 +107,17 @@
         `min_money_amount` double precision,
         `min_money_currency` varchar(255),
         `paragraph` varchar(1024),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `entrepreneur` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `qualification_record` varchar(255),
+        `skill_record` varchar(255),
+        `start_up_name` varchar(255),
+        `sector_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -95,6 +142,31 @@
         `min_money_amount` double precision,
         `min_money_currency` varchar(255),
         `paragraph` varchar(1024),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `investment_round` (
+       `id` integer not null,
+        `version` integer not null,
+        `amount_amount` double precision,
+        `amount_currency` varchar(255),
+        `creation_date` datetime(6),
+        `description` varchar(1024),
+        `kind_round` varchar(255),
+        `more_info` varchar(255),
+        `ticker` varchar(255),
+        `title` varchar(255),
+        `entrepreneur_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `investor` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `first_name` varchar(255),
+        `profile` varchar(255),
+        `sector_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -125,6 +197,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `provider` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `company` varchar(255),
+        `sector` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `record` (
        `id` integer not null,
         `version` integer not null,
@@ -132,7 +213,7 @@
         `email` varchar(255),
         `investor_name` varchar(50),
         `open_source` bit,
-        `stars` double precision,
+        `stars` integer,
         `title` varchar(50),
         `web` varchar(255),
         `sector_id` integer not null,
@@ -171,7 +252,7 @@
         `email` varchar(255),
         `investor_name` varchar(50),
         `open_source` bit,
-        `stars` double precision,
+        `stars` integer,
         `title` varchar(50),
         `web` varchar(255),
         `sector_id` integer not null,
@@ -185,7 +266,7 @@
         `email` varchar(255),
         `investor_name` varchar(50),
         `open_source` bit,
-        `stars` double precision,
+        `stars` integer,
         `title` varchar(50),
         `web` varchar(255),
         `sector_id` integer not null,
@@ -201,6 +282,13 @@
         `identity_surname` varchar(255),
         `password` varchar(255),
         `username` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `work_programme` (
+       `id` integer not null,
+        `version` integer not null,
+        `investment_round_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -222,6 +310,11 @@
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
 
+    alter table `activity` 
+       add constraint `FKsi3ivubkr0ib5fqb6qv2k7i19` 
+       foreign key (`work_programme_id`) 
+       references `work_programme` (`id`);
+
     alter table `administrator` 
        add constraint FK_2a5vcjo3stlfcwadosjfq49l1 
        foreign key (`user_account_id`) 
@@ -231,6 +324,16 @@
        add constraint FK_6lnbc6fo3om54vugoh8icg78m 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `application` 
+       add constraint `FKk5ibe41quxsif8im882xv4afo` 
+       foreign key (`investment_round_id`) 
+       references `investment_round` (`id`);
+
+    alter table `application` 
+       add constraint `FKl4fp0cd8c008ma79n6w58xhk9` 
+       foreign key (`investor_id`) 
+       references `investor` (`id`);
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
@@ -252,6 +355,41 @@
        foreign key (`rookie_id`) 
        references `rookie_target` (`id`);
 
+    alter table `consumer` 
+       add constraint FK_6cyha9f1wpj0dpbxrrjddrqed 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `entrepreneur` 
+       add constraint `FK7hiph2o3yoewe954maj7uxame` 
+       foreign key (`sector_id`) 
+       references `sector` (`id`);
+
+    alter table `entrepreneur` 
+       add constraint FK_r6tqltqvrlh1cyy8rsj5pev1q 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `investment_round` 
+       add constraint `FKkj1l8c2ftn9c65y061me6t37j` 
+       foreign key (`entrepreneur_id`) 
+       references `entrepreneur` (`id`);
+
+    alter table `investor` 
+       add constraint `FK2x8ul7k3yn927bq4l2u9s6429` 
+       foreign key (`sector_id`) 
+       references `sector` (`id`);
+
+    alter table `investor` 
+       add constraint FK_dcek5rr514s3rww0yy57vvnpq 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `provider` 
+       add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
     alter table `record` 
        add constraint `FK5m3d06dehg19dco3s011wvwjo` 
        foreign key (`sector_id`) 
@@ -266,3 +404,8 @@
        add constraint FK_6u4iuvl4m0o1avirqg4jwv7ov 
        foreign key (`sector_id`) 
        references `sector` (`id`);
+
+    alter table `work_programme` 
+       add constraint `FK3nxyaik1cnvfdg02p9a8ibiko` 
+       foreign key (`investment_round_id`) 
+       references `investment_round` (`id`);

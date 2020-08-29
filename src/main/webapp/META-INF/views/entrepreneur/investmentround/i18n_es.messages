@@ -1,0 +1,42 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+entrepreneur.investment-round.form.label.ticker = Ticker
+entrepreneur.investment-round.form.label.creationDate = Fecha de Creación
+entrepreneur.investment-round.form.label.title = Título
+entrepreneur.investment-round.form.label.description = Descripción
+entrepreneur.investment-round.form.label.amount = Cantidad
+entrepreneur.investment-round.form.label.moreInfo = Más información
+entrepreneur.investment-round.form.label.kindRound = Tipo de ronda
+entrepreneur.investment-round.form.label.entrepreneur.startUpName = Nombre de Entrepreneur StartUp 
+entrepreneur.investment-round.form.button.return = Volver
+
+entrepreneur.investment-round.list.label.ticker = Ticker
+entrepreneur.investment-round.list.label.creationDate = Fecha de Creación
+entrepreneur.investment-round.list.label.title = Título
+entrepreneur.investment-round.list.label.description = Descripción
+entrepreneur.investment-round.list.label.amount = Cantidad
+entrepreneur.investment-round.list.label.moreInfo = Más información
+entrepreneur.investment-round.list.label.kindRound = Tipo de ronda
+entrepreneur.investment-round.list.label.entrepreneur.startUpName = Nombre de Entrepreneur StartUp 
+
+
+entrepreneur.investment-round.finalMode = Está en modo final
+
+entrepreneur.investment-round.error.spam = Es considerado spam
+entrepreneur.investment-round.ticker.valid = El ticker no es válido
+entrepreneur.investment-round.finalMode.activity = No lo puedes convetir en modo final sin ninguna actividad asociada
+
+entrepreneur.application.form.label.status.seed = Seed
+entrepreneur.application.form.label.status.bridge = Bridge
+entrepreneur.application.form.label.status.seriesa = Series A
+entrepreneur.application.form.label.status.seriesb = Series B
+entrepreneur.application.form.label.status.seriesc = Series C
+entrepreneur.application.form.label.status.angel = Angel

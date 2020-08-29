@@ -18,6 +18,14 @@ master.welcome.title = Welcome!
 master.welcome.text = \
 	Welcome to Acme Incubator! Never before has it bee easier to get your \
 	project up and running!
+	
+# master.menu.entrepreneur ########################################################
+
+master.menu.entrepreneur = Entrepreneur
+master.menu.entrepreneur.investment-round =  Registered investment rounds
+master.menu.entrepreneur.work-programme =  Work Programms
+master.menu.entrepreneur.application = Applications
+master.menu.entrepreneur.activity = Activity
 
 # master.menu #################################################################
 

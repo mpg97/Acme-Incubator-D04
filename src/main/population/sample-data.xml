@@ -211,7 +211,7 @@
 		<property name="openSource" value="1" />
 		<property name="stars" value="4" />
 	</bean>
-	
+
 	<bean id="technology04" class="acme.entities.technology.Technology">
 
 		<property name="title" value="My fourth technology" />
@@ -267,7 +267,7 @@
 		<property name="openSource" value="1" />
 		<property name="stars" value="2" />
 	</bean>
-	
+
 	<bean id="tool04" class="acme.entities.tool.Tool">
 
 		<property name="title" value="My fourth tool" />
@@ -300,6 +300,108 @@
 
 	<bean id="Sector05" class="acme.entities.sector.Sector">
 		<property name="sector" value="Health" />
+	</bean>
+
+	<bean id="investmentRound01" class="acme.entities.investmentround.InvestmentRound">
+
+		<property name="ticker" value="SSS-09-123456" />
+		<property name="creationDate" value="2021/6/13 15:56" />
+		<property name="title" value="Round Title" />
+		<property name="description" value="My first description" />
+		<property name="amount" value="€ 400" />
+		<property name="kindRound" value="SEED" />
+		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
+
+
+
+	</bean>
+
+	<bean id="workProgramme01" class="acme.entities.workProgramme.WorkProgramme">
+		<property name="investmentRound" ref="investmentRound01" />
+	</bean>
+
+	<bean id="activity01" class="acme.entities.activity.Activity">
+
+		<property name="title" value="My first notice" />
+		<property name="start" value="2021/6/13 15:56" />
+		<property name="end" value="2021/6/13 15:56" />
+		<property name="budget" value="€ 400" />
+		<property name="workProgramme" ref="workProgramme01" />
+
+	</bean>
+
+
+	<bean name="entrepreneur1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="entrepreneur1" />
+		<property name="password" value="entrepreneur1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Entrepreneur" />
+				<property name="surname" value="One" />
+				<property name="email" value="entrepreneur1@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="entrepreneur1Entrepreneur" />
+				<ref bean="entrepreneur1Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="entrepreneur1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="entrepreneur1UserAccount" />
+	</bean>
+
+	<bean name="entrepreneur1Entrepreneur" class="acme.entities.roles.Entrepreneur">
+		<property name="startUpName" value="Entrepreneur 1, Inc." />
+		<property name="qualificationRecord" value="Example" />
+		<property name="skillRecord" value="Example" />
+		<property name="userAccount" ref="entrepreneur1UserAccount" />
+		<property name="sector" ref="Sector05" />
+	</bean>
+
+	<bean id="application01" class="acme.entities.application.Application">
+
+		<property name="ticker" value="My first notice" />
+		<property name="creation" value="2021/6/13 15:56" />
+		<property name="statement" value="Beauty/Kiss" />
+		<property name="moneyOffer" value="€ 400" />
+		<property name="status" value="pending" />
+		<property name="investmentRound" ref="investmentRound01" />
+		<property name="investor" ref="investor1" />
+
+	</bean>
+
+	<bean name="investorUserAccount1" class="acme.framework.entities.UserAccount">
+		<property name="username" value="investor1" />
+		<property name="password" value="investor1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Investor" />
+				<property name="surname" value="Cool" />
+				<property name="email" value="investor1@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="investor1" />
+				<ref bean="investorAuthenticated1" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="investorAuthenticated1" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="investorUserAccount1" />
+	</bean>
+
+	<bean name="investor1" class="acme.entities.roles.Investor">
+		<property name="firstName" value="Baby" />
+		<property name="sector" ref="Sector01" />
+		<property name="profile" value="Example" />
+		<property name="userAccount" ref="investorUserAccount1" />
 	</bean>
 
 
