@@ -15,7 +15,6 @@ investor.application.form.label.statement = Declaración:
 investor.application.form.label.moneyOffer = Oferta monetaria:
 investor.application.form.label.investmentRound = Ticker de ronda de inversión:
 investor.application.form.label.investor = Nombre de inversor:
-investor.application.form.label.Estado = Estado:
 investor.application.form.button.return = Volver
 
 investor.application.list.label.ticker = Ticker
@@ -25,6 +24,3 @@ investor.application.list.label.statement = Declaración
 investor.application.list.label.moneyOffer = Oferta monetaria
 investor.application.list.label.investmentRound = Ticker de ronda de inversión
 investor.application.list.label.investor = Nombre de inversor
-investor.application.list.label.Estado = Estado
-
-investor.application.currency.amount = Solo aceptamos euros

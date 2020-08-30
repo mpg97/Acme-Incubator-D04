@@ -82,6 +82,11 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.investor #######################################################
+
+master.menu.investor = Inversor
+master.menu.investor.applications = Mis solicitudes
+
 # master.menu.authenticated ##########################################################
 
 master.menu.authenticated = Autentificado

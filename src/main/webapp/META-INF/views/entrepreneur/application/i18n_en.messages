@@ -15,9 +15,7 @@ entrepreneur.application.form.label.statement = Statement:
 entrepreneur.application.form.label.moneyOffer = Money Offer:
 entrepreneur.application.form.label.investmentRound = Investment Round Ticker:
 entrepreneur.application.form.label.investor = Investor Name:
-entrepreneur.application.form.label.status = Status:
 entrepreneur.application.form.button.return = Return
-entrepreneur.application.form.label.justification = Justification:
 
 entrepreneur.application.list.label.ticker = Ticker
 entrepreneur.application.list.label.title = Title
@@ -26,10 +24,7 @@ entrepreneur.application.list.label.statement = Statement
 entrepreneur.application.list.label.moneyOffer = Money Offer
 entrepreneur.application.list.label.investmentRound = Investment Round Ticker
 entrepreneur.application.list.label.investor = Investor Name
-entrepreneur.application.list.label.status = Status
-
 
 entrepreneur.application.form.label.status.pending = pending
 entrepreneur.application.form.label.status.accepted = accepted
 entrepreneur.application.form.label.status.rejected = rejected
-entrepreneur.application.denied.justification = If you reject the application you have to give a justification

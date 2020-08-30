@@ -33,7 +33,7 @@ public class EntrepreneurApplicationListAppliedToMineService implements Abstract
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creation", "statement", "moneyOffer", "status", "investmentRound.ticker", "investor.firstName");
+		request.unbind(entity, model, "ticker", "creation", "statement", "moneyOffer", "investmentRound.ticker", "investor.firmName");
 
 	}
 	@Override

@@ -23,7 +23,7 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 
 		int id = request.getModel().getInteger("id");
 		InvestmentRound investment = this.repository.findInvestmentRoundById(id);
-		return investment.getEntrepreneur().getId() == request.getPrincipal().getAccountId();
+		return investment.getEntrepreneur().getId() == request.getPrincipal().getActiveRoleId();
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creationDate", "title", "description", "amount", "moreInfo", "kindRound", "workProgramme");
+		request.unbind(entity, model, "ticker", "creationDate", "title", "description", "amount", "moreInfo", "moreInfo", "kindRound", "entrepreneur.startUpName");
 
 	}
 

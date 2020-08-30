@@ -22,7 +22,6 @@
 	<acme:form-textbox code="authenticated.investment-round.form.label.title" path="title" />
 	<acme:form-textbox code="authenticated.investment-round.form.label.description" path="description" />
 	<acme:form-textbox code="authenticated.investment-round.form.label.amount" path="amount" />
-	<acme:form-textbox code="authenticated.investment-round.form.label.moreInfo" path="moreInfo" />
 	<acme:form-textbox code="authenticated.investment-round.form.label.kindRound" path="kindRound" />
 	<acme:form-textbox code="authenticated.investment-round.form.label.entrepreneur.startUpName" path="entrepreneur.startUpName" />
 

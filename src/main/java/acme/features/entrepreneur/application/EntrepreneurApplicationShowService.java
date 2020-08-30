@@ -23,7 +23,7 @@ public class EntrepreneurApplicationShowService implements AbstractShowService<E
 	public boolean authorise(final Request<Application> request) {
 		assert request != null;
 
-		int principal = request.getPrincipal().getAccountId();
+		int principal = request.getPrincipal().getActiveRoleId();
 		Collection<Application> apps = this.repository.findApplicationByEntrepenurId(principal);
 
 		int id = request.getModel().getInteger("id");
@@ -38,7 +38,7 @@ public class EntrepreneurApplicationShowService implements AbstractShowService<E
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creation", "statement", "moneyOffer", "status", "justification", "investmentRound.ticker", "investor.firstName");
+		request.unbind(entity, model, "ticker", "creation", "statement", "moneyOffer", "investmentRound.ticker", "investor.firmName");
 
 	}
 

@@ -27,6 +27,11 @@ master.menu.entrepreneur.work-programme =  Work Programms
 master.menu.entrepreneur.application = Applications
 master.menu.entrepreneur.activity = Activity
 
+# master.menu.investor #######################################################
+
+master.menu.investor = Investor
+master.menu.investor.applications = My applications
+
 # master.menu #################################################################
 
 master.menu.home = Home

@@ -15,9 +15,7 @@ entrepreneur.application.form.label.statement = Declaración:
 entrepreneur.application.form.label.moneyOffer = Oferta monetaria:
 entrepreneur.application.form.label.investmentRound = Ticker de ronda de inversión:
 entrepreneur.application.form.label.investor = Nombre de inversor:
-entrepreneur.application.form.label.status = Estado:
 entrepreneur.application.form.button.return = Volver
-entrepreneur.application.form.label.justification = Justificación:
 
 entrepreneur.application.list.label.ticker = Ticker
 entrepreneur.application.list.label.ticker = Título
@@ -26,11 +24,8 @@ entrepreneur.application.list.label.statement = Declaración
 entrepreneur.application.list.label.moneyOffer = Oferta monetaria
 entrepreneur.application.list.label.investmentRound = Ticker de ronda de inversión
 entrepreneur.application.list.label.investor = Nombre de inversor
-entrepreneur.application.list.label.status = Estado
 
 
 entrepreneur.application.form.label.status.pending = pendiente
 entrepreneur.application.form.label.status.accepted = aceptado
 entrepreneur.application.form.label.status.rejected = rechazado
-
-entrepreneur.application.denied.justification = Debe justificar el rechazo de la solicitud

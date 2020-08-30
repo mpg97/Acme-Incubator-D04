@@ -9,7 +9,7 @@ representations, nor do - they accept any liabilities with respect to them. --%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="investor.application.form.label.title" path="ticker" />
+	<acme:form-textbox code="investor.application.form.label.ticker" path="ticker" />
 	<acme:form-textbox code="investor.application.form.label.statement" path="statement" />
 	<acme:form-money code="investor.application.form.label.moneyOffer" path="moneyOffer" />
 	<acme:form-submit test="${command == 'create'}" code="administrator.tool.form.button.create" action="/investor/application/create?investmentRoundId=${param.investmentRoundId}" />
