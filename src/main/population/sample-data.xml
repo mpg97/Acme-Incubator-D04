@@ -52,12 +52,8 @@
 		<property name="creation" value="2019/5/30 15:56" />
 		<property name="deadline" value="2021/2/22 19:50" />
 		<property name="paragraph" value="I want a description" />
-		<property name="minMoney">
-			<ref bean="Money01" />
-		</property>
-		<property name="maxMoney">
-			<ref bean="Money02" />
-		</property>
+		<property name="minMoney" value="€ 779.90" />
+		<property name="maxMoney" value="€ 1178.62" />
 		<property name="email" value="abc@us.es" />
 
 	</bean>
@@ -68,12 +64,8 @@
 		<property name="creation" value="2019/9/17 18:26" />
 		<property name="deadline" value="2021/4/15 11:10" />
 		<property name="paragraph" value="I want a description" />
-		<property name="minMoney">
-			<ref bean="Money02" />
-		</property>
-		<property name="maxMoney">
-			<ref bean="Money03" />
-		</property>
+		<property name="minMoney" value="€ 691.03" />
+		<property name="maxMoney" value="€ 2172.2" />
 		<property name="email" value="times@news.com" />
 
 	</bean>
@@ -115,59 +107,32 @@
 
 	<bean id="rookieTarget01" class="acme.entities.targets.RookieTarget">
 		<property name="goal" value="get 100 readers" />
-		<property name="reward">
-			<ref bean="Money01" />
-		</property>
+		<property name="reward" value="€ 850.0" />
 	</bean>
 
 	<bean id="rookieTarget02" class="acme.entities.targets.RookieTarget">
 		<property name="goal" value="sell 100 units" />
-		<property name="reward">
-			<ref bean="Money01" />
-		</property>
+		<property name="reward" value="€ 560.0" />
 	</bean>
 
 	<bean id="averageTarget01" class="acme.entities.targets.AverageTarget">
 		<property name="goal" value="get 500 readers" />
-		<property name="reward">
-			<ref bean="Money02" />
-		</property>
+		<property name="reward" value="€ 1350.0" />
 	</bean>
 
 	<bean id="averageTarget02" class="acme.entities.targets.AverageTarget">
 		<property name="goal" value="sell 500 units" />
-		<property name="reward">
-			<ref bean="Money02" />
-		</property>
+		<property name="reward" value="€ 750.63" />
 	</bean>
 
 	<bean id="expertTarget01" class="acme.entities.targets.ExpertTarget">
 		<property name="goal" value="get 1000 readers" />
-		<property name="reward">
-			<ref bean="Money03" />
-		</property>
+		<property name="reward" value="€ 1793.46" />
 	</bean>
 
 	<bean id="expertTarget02" class="acme.entities.targets.ExpertTarget">
 		<property name="goal" value="sell 500 units" />
-		<property name="reward">
-			<ref bean="Money03" />
-		</property>
-	</bean>
-
-	<bean id="Money01" class="acme.framework.datatypes.Money">
-		<property name="amount" value="850.0" />
-		<property name="currency" value="€" />
-	</bean>
-
-	<bean id="Money02" class="acme.framework.datatypes.Money">
-		<property name="amount" value="1300.0" />
-		<property name="currency" value="€" />
-	</bean>
-
-	<bean id="Money03" class="acme.framework.datatypes.Money">
-		<property name="amount" value="2100.0" />
-		<property name="currency" value="EUR" />
+		<property name="reward" value="€ 1067.50" />
 	</bean>
 
 	<bean id="technology01" class="acme.entities.technology.Technology">
@@ -305,34 +270,38 @@
 	<bean id="investmentRound01" class="acme.entities.investmentround.InvestmentRound">
 
 		<property name="ticker" value="SSS-01-123456" />
-		<property name="creationDate" value="2021/6/13 15:56" />
+		<property name="creationDate" value="2016/11/02 23:59" />
 		<property name="title" value="Round Title" />
 		<property name="description" value="My first description" />
-		<property name="amount" value="€ 400" />
+		<property name="amount" value="€ 40000" />
 		<property name="kindRound" value="SEED" />
 		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
-		<property name="workProgramme" ref="workProgramme01" />
+		<property name="workProgramme">
+			<ref bean="workProgramme01" />
+		</property>
 
 	</bean>
 
 	<bean id="investmentRound02" class="acme.entities.investmentround.InvestmentRound">
 
 		<property name="ticker" value="SSS-01-123456" />
-		<property name="creationDate" value="2021/6/13 15:56" />
+		<property name="creationDate" value="2017/5/18 18:28" />
 		<property name="title" value="Round Title" />
 		<property name="description" value="My first description" />
-		<property name="amount" value="€ 400" />
+		<property name="amount" value="€ 78500" />
 		<property name="kindRound" value="SEED" />
 		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
-		<property name="workProgramme" ref="workProgramme02" />
+		<property name="workProgramme">
+			<ref bean="workProgramme02" />
+		</property>
 
 	</bean>
 
 
 	<bean id="activity01" class="acme.entities.activity.Activity">
 
-		<property name="title" value="My first notice" />
-		<property name="start" value="2021/6/13 15:56" />
+		<property name="title" value="My first activity" />
+		<property name="start" value="2020/6/30 15:00" />
 		<property name="end" value="2021/6/13 15:56" />
 		<property name="budget" value="€ 400" />
 
@@ -340,27 +309,66 @@
 
 	<bean id="activity02" class="acme.entities.activity.Activity">
 
-		<property name="title" value="My first notice" />
-		<property name="start" value="2021/6/13 15:56" />
-		<property name="end" value="2021/6/13 15:56" />
-		<property name="budget" value="€ 400" />
+		<property name="title" value="My second activity" />
+		<property name="start" value="2019/9/07 18:20" />
+		<property name="end" value="2020/10/13 11:50" />
+		<property name="budget" value="€ 1550.75" />
 
 	</bean>
 
 	<bean id="activity03" class="acme.entities.activity.Activity">
 
-		<property name="title" value="My first notice" />
-		<property name="start" value="2021/6/13 15:56" />
-		<property name="end" value="2021/6/13 15:56" />
-		<property name="budget" value="€ 400" />
+		<property name="title" value="My third activity" />
+		<property name="start" value="2018/6/20 09:45" />
+		<property name="end" value="2019/1/01 10:00" />
+		<property name="budget" value="€ 315.10" />
 
 	</bean>
+
+	<bean id="activity04" class="acme.entities.activity.Activity">
+
+		<property name="title" value="My fourth activity" />
+		<property name="start" value="2019/7/11 15:00" />
+		<property name="end" value="2020/6/05 19:35" />
+		<property name="budget" value="€ 629.99" />
+
+	</bean>
+
+	<bean id="activity05" class="acme.entities.activity.Activity">
+
+		<property name="title" value="My fifth activity" />
+		<property name="start" value="2019/3/30 13:05" />
+		<property name="end" value="2019/4/24 22:50" />
+		<property name="budget" value="€ 850.50" />
+
+	</bean>
+
+	<bean id="activity06" class="acme.entities.activity.Activity">
+
+		<property name="title" value="My sixth activity" />
+		<property name="start" value="2020/1/10 11:20" />
+		<property name="end" value="2020/2/29 08:40" />
+		<property name="budget" value="€ 40150.66" />
+
+	</bean>
+
+	<bean id="activity07" class="acme.entities.activity.Activity">
+
+		<property name="title" value="My seventh activity" />
+		<property name="start" value="2020/1/10 11:20" />
+		<property name="end" value="2021/2/21 08:40" />
+		<property name="budget" value="€ 6190.35" />
+
+	</bean>
+
 	<bean id="workProgramme01" class="acme.entities.workProgramme.WorkProgramme">
 
 		<property name="activities">
 			<list>
 				<ref bean="activity01" />
 				<ref bean="activity02" />
+				<ref bean="activity04" />
+				<ref bean="activity07" />
 			</list>
 		</property>
 
@@ -371,6 +379,8 @@
 		<property name="activities">
 			<list>
 				<ref bean="activity03" />
+				<ref bean="activity05" />
+				<ref bean="activity06" />
 			</list>
 		</property>
 
@@ -410,8 +420,8 @@
 
 	<bean id="application01" class="acme.entities.application.Application">
 
-		<property name="ticker" value="SSS-01-123456" />
-		<property name="creation" value="2021/6/13 15:56" />
+		<property name="ticker" value="SSS-17-123456" />
+		<property name="creation" value="2017/6/13 15:56" />
 		<property name="statement" value="Beauty/Kiss" />
 		<property name="moneyOffer" value="€ 400" />
 		<property name="investmentRound" ref="investmentRound01" />

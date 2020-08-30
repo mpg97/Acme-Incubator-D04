@@ -2,6 +2,7 @@
 package acme.features.authenticated.investmentround;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.data.jpa.repository.Query;
 
@@ -16,7 +17,7 @@ public interface AuthenticatedInvestmentRoundRepository extends AbstractReposito
 	@Query("select n from InvestmentRound n where n.id = ?1")
 	InvestmentRound findInvestmentRoundById(int id);
 
-	@Query("select distinct i from InvestmentRound i")
-	Collection<InvestmentRound> findAllActiveInvestmentRounds();
+	@Query("SELECT DISTINCT i FROM InvestmentRound i INNER JOIN WorkProgramme as w ON i.workProgramme.id = w.id JOIN w.activities a WHERE a.end > ?1")
+	Collection<InvestmentRound> findAllActiveInvestmentRounds(Date d);
 
 }

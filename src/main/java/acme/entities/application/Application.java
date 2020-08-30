@@ -10,6 +10,8 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import acme.entities.investmentround.InvestmentRound;
 import acme.entities.roles.Investor;
@@ -29,9 +31,12 @@ public class Application extends DomainEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
+	@Pattern(regexp = "^([A-Z]{3}[-][0-9]{2}[-][0-9]{6})")
 	private String				ticker;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
+	@Past
 	private Date				creation;
 
 	@NotBlank

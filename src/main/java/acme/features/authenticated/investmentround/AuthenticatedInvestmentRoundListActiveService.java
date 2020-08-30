@@ -2,6 +2,7 @@
 package acme.features.authenticated.investmentround;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,6 +41,6 @@ public class AuthenticatedInvestmentRoundListActiveService implements AbstractLi
 	public Collection<InvestmentRound> findMany(final Request<InvestmentRound> request) {
 		assert request != null;
 
-		return this.repository.findAllActiveInvestmentRounds();
+		return this.repository.findAllActiveInvestmentRounds(new Date(System.currentTimeMillis() - 1));
 	}
 }

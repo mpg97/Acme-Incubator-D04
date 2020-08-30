@@ -9,6 +9,7 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -30,6 +31,7 @@ public class Activity extends DomainEntity {
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
+	@Past
 	private Date				start;
 
 	@NotNull
