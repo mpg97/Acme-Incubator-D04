@@ -14,7 +14,7 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class EntrepreneurInvestmentRoundListService implements AbstractListService<Entrepreneur, InvestmentRound> {
+public class EntrepreneurInvestmentRoundListMineService implements AbstractListService<Entrepreneur, InvestmentRound> {
 
 	@Autowired
 	EntrepreneurInvestmentRoundRepository repository;
@@ -33,7 +33,7 @@ public class EntrepreneurInvestmentRoundListService implements AbstractListServi
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creationDate", "title", "description", "amount", "moreInfo", "kindRound", "entrepreneur.startUpName");
+		request.unbind(entity, model, "ticker", "creationDate", "title", "amount", "kindRound");
 
 	}
 
@@ -41,13 +41,9 @@ public class EntrepreneurInvestmentRoundListService implements AbstractListServi
 	public Collection<InvestmentRound> findMany(final Request<InvestmentRound> request) {
 		assert request != null;
 
-		Collection<InvestmentRound> result;
-		int id;
-		Principal principal;
-		principal = request.getPrincipal();
-		id = principal.getActiveRoleId();
+		Principal principal = request.getPrincipal();
+		int id = principal.getActiveRoleId();
 
-		result = this.repository.findInvestmentRoundByEntrepreneurId(id);
-		return result;
+		return this.repository.findInvestmentRoundByEntrepreneurId(id);
 	}
 }

@@ -10,7 +10,6 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 
 import acme.entities.investmentround.InvestmentRound;
 import acme.entities.roles.Investor;
@@ -41,12 +40,6 @@ public class Application extends DomainEntity {
 	@Valid
 	@NotNull
 	private Money				moneyOffer;
-
-	@NotBlank
-	@Pattern(regexp = ".*\\b(accepted|pending|rejected)\\b.*")
-	private String				status;
-
-	private String				justification;
 
 	@NotNull
 	@Valid

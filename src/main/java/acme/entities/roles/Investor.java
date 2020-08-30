@@ -23,7 +23,7 @@ public class Investor extends UserRole {
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
-	private String				firstName;
+	private String				firmName;
 
 	@NotNull
 	@Valid

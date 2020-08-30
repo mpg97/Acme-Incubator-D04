@@ -5,9 +5,7 @@ import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 
-import acme.entities.activity.Activity;
 import acme.entities.investmentround.InvestmentRound;
-import acme.entities.roles.Entrepreneur;
 import acme.framework.repositories.AbstractRepository;
 
 public interface EntrepreneurInvestmentRoundRepository extends AbstractRepository {
@@ -20,14 +18,5 @@ public interface EntrepreneurInvestmentRoundRepository extends AbstractRepositor
 
 	@Query("select n from InvestmentRound n where n.entrepreneur.id = ?1")
 	Collection<InvestmentRound> findInvestmentRoundByEntrepreneurId(int id);
-
-	@Query("select n from Activity n where n.workProgramme.investmentRound.id = ?1")
-	Collection<Activity> findAllActivityByInvestmentRoundId(int id);
-
-	@Query("select count(n) from Activity n where n.workProgramme.investmentRound.id = ?1")
-	Integer countActivityByInvestmentRoundId(int id);
-
-	@Query("select t from Entrepreneur t where t.userAccount.id = ?1")
-	Entrepreneur findInvestorByUserAccountId(int Id);
 
 }

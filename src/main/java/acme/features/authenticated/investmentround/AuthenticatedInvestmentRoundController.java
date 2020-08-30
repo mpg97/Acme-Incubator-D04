@@ -18,16 +18,16 @@ import acme.framework.entities.Authenticated;
 public class AuthenticatedInvestmentRoundController extends AbstractController<Authenticated, InvestmentRound> {
 
 	@Autowired
-	private AuthenticatedInvestmentRoundListService	listService;
+	private AuthenticatedInvestmentRoundListActiveService	listActiveService;
 
 	@Autowired
-	private AuthenticatedInvestmentRoundShowService	showService;
+	private AuthenticatedInvestmentRoundShowService			showService;
 
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-		super.addCustomCommand(CustomCommand.LIST_ACTIVE, BasicCommand.LIST, this.listService);
+		super.addCustomCommand(CustomCommand.LIST_ACTIVE, BasicCommand.LIST, this.listActiveService);
 	}
 
 }

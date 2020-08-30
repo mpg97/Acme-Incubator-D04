@@ -21,7 +21,9 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 	public boolean authorise(final Request<InvestmentRound> request) {
 		assert request != null;
 
-		return true;
+		int id = request.getModel().getInteger("id");
+		InvestmentRound investment = this.repository.findInvestmentRoundById(id);
+		return investment.getEntrepreneur().getId() == request.getPrincipal().getAccountId();
 	}
 
 	@Override
@@ -30,7 +32,7 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creationDate", "title", "description", "amount", "moreInfo", "kindRound", "entrepreneur.startUpName");
+		request.unbind(entity, model, "ticker", "creationDate", "title", "description", "amount", "moreInfo", "kindRound", "workProgramme");
 
 	}
 

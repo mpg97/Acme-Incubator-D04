@@ -14,7 +14,7 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class EntrepreneurApplicationListService implements AbstractListService<Entrepreneur, Application> {
+public class EntrepreneurApplicationListAppliedToMineService implements AbstractListService<Entrepreneur, Application> {
 
 	@Autowired
 	EntrepreneurApplicationRepository repository;
@@ -40,14 +40,10 @@ public class EntrepreneurApplicationListService implements AbstractListService<E
 	public Collection<Application> findMany(final Request<Application> request) {
 		assert request != null;
 
-		Collection<Application> result;
-		int id;
-		Principal principal;
-		principal = request.getPrincipal();
-		id = principal.getActiveRoleId();
-		result = this.repository.findApplicationByEntrepenurId(id);
+		Principal principal = request.getPrincipal();
+		int id = principal.getActiveRoleId();
 
-		return result;
+		return this.repository.findApplicationByEntrepenurId(id);
 	}
 
 }
