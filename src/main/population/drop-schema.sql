@@ -1,8 +1,4 @@
 
-    alter table `activity` 
-       drop 
-       foreign key `FKsi3ivubkr0ib5fqb6qv2k7i19`;
-
     alter table `administrator` 
        drop 
        foreign key FK_2a5vcjo3stlfcwadosjfq49l1;
@@ -51,6 +47,10 @@
        drop 
        foreign key `FKkj1l8c2ftn9c65y061me6t37j`;
 
+    alter table `investment_round` 
+       drop 
+       foreign key `FKffha1hcrm4bbqlasbpy0g6mjd`;
+
     alter table `investor` 
        drop 
        foreign key `FK2x8ul7k3yn927bq4l2u9s6429`;
@@ -75,9 +75,13 @@
        drop 
        foreign key FK_6u4iuvl4m0o1avirqg4jwv7ov;
 
-    alter table `work_programme` 
+    alter table `work_programme_activity` 
        drop 
-       foreign key `FK3nxyaik1cnvfdg02p9a8ibiko`;
+       foreign key `FK64n2ar72ij12dk1l9morefe8a`;
+
+    alter table `work_programme_activity` 
+       drop 
+       foreign key `FKomanejy3ae5tn81rugqxqxs44`;
 
     drop table if exists `activity`;
 
@@ -132,5 +136,7 @@
     drop table if exists `user_account`;
 
     drop table if exists `work_programme`;
+
+    drop table if exists `work_programme_activity`;
 
     drop table if exists `hibernate_sequence`;

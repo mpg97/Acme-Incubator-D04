@@ -16,7 +16,7 @@ public interface AuthenticatedInvestmentRoundRepository extends AbstractReposito
 	@Query("select n from InvestmentRound n where n.id = ?1")
 	InvestmentRound findInvestmentRoundById(int id);
 
-	@Query("select i from InvestmentRound i where i.workProgramme.activities.end > current_timestamp")
+	@Query("select distinct i from InvestmentRound i")
 	Collection<InvestmentRound> findAllActiveInvestmentRounds();
 
 }

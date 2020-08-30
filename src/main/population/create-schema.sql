@@ -7,7 +7,6 @@
         `end` datetime(6),
         `start` datetime(6),
         `title` varchar(255),
-        `work_programme_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -29,11 +28,9 @@
        `id` integer not null,
         `version` integer not null,
         `creation` datetime(6),
-        `justification` varchar(255),
         `money_offer_amount` double precision,
         `money_offer_currency` varchar(255),
         `statement` varchar(255),
-        `status` varchar(255),
         `ticker` varchar(255),
         `investment_round_id` integer not null,
         `investor_id` integer not null,
@@ -152,11 +149,12 @@
         `amount_currency` varchar(255),
         `creation_date` datetime(6),
         `description` varchar(1024),
-        `kind_round` varchar(255),
+        `kind_round` integer,
         `more_info` varchar(255),
         `ticker` varchar(255),
         `title` varchar(255),
         `entrepreneur_id` integer not null,
+        `work_programme_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -164,7 +162,7 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        `first_name` varchar(255),
+        `firm_name` varchar(255),
         `profile` varchar(255),
         `sector_id` integer not null,
         primary key (`id`)
@@ -288,8 +286,12 @@
     create table `work_programme` (
        `id` integer not null,
         `version` integer not null,
-        `investment_round_id` integer,
         primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `work_programme_activity` (
+       `work_programme_id` integer not null,
+        `activities_id` integer not null
     ) engine=InnoDB;
 
     create table `hibernate_sequence` (
@@ -307,13 +309,14 @@
     alter table `challenge` 
        add constraint UK_2rv17ol73skef6j5wqm46ba9w unique (`rookie_id`);
 
+    alter table `investment_round` 
+       add constraint UK_7reldde3v7d5181jo8yi5hj3s unique (`work_programme_id`);
+
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
 
-    alter table `activity` 
-       add constraint `FKsi3ivubkr0ib5fqb6qv2k7i19` 
-       foreign key (`work_programme_id`) 
-       references `work_programme` (`id`);
+    alter table `work_programme_activity` 
+       add constraint UK_46kr8kpedag70ill233t1hq17 unique (`activities_id`);
 
     alter table `administrator` 
        add constraint FK_2a5vcjo3stlfcwadosjfq49l1 
@@ -375,6 +378,11 @@
        foreign key (`entrepreneur_id`) 
        references `entrepreneur` (`id`);
 
+    alter table `investment_round` 
+       add constraint `FKffha1hcrm4bbqlasbpy0g6mjd` 
+       foreign key (`work_programme_id`) 
+       references `work_programme` (`id`);
+
     alter table `investor` 
        add constraint `FK2x8ul7k3yn927bq4l2u9s6429` 
        foreign key (`sector_id`) 
@@ -405,7 +413,12 @@
        foreign key (`sector_id`) 
        references `sector` (`id`);
 
-    alter table `work_programme` 
-       add constraint `FK3nxyaik1cnvfdg02p9a8ibiko` 
-       foreign key (`investment_round_id`) 
-       references `investment_round` (`id`);
+    alter table `work_programme_activity` 
+       add constraint `FK64n2ar72ij12dk1l9morefe8a` 
+       foreign key (`activities_id`) 
+       references `activity` (`id`);
+
+    alter table `work_programme_activity` 
+       add constraint `FKomanejy3ae5tn81rugqxqxs44` 
+       foreign key (`work_programme_id`) 
+       references `work_programme` (`id`);
