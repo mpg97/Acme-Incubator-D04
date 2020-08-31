@@ -3,6 +3,7 @@ package acme.entities.application;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -28,32 +29,32 @@ public class Application extends DomainEntity {
 	/**
 	 *
 	 */
-	private static final long	serialVersionUID	= 1L;
+	private static final long		serialVersionUID	= 1L;
 
 	@NotBlank
 	@Pattern(regexp = "^([A-Z]{3}[-][0-9]{2}[-][0-9]{6})")
-	private String				ticker;
+	private String					ticker;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	private Date				creation;
+	private Date					creation;
 
-	@NotBlank
-	private String				statement;
+	@NotNull
+	private ApplicationStatement	statement;
 
 	@Valid
 	@NotNull
-	private Money				moneyOffer;
+	private Money					moneyOffer;
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
-	private InvestmentRound		investmentRound;
+	@ManyToOne(optional = false, cascade = CascadeType.ALL)
+	private InvestmentRound			investmentRound;
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
-	private Investor			investor;
+	@ManyToOne(optional = false, cascade = CascadeType.ALL)
+	private Investor				investor;
 
 }

@@ -15,12 +15,5 @@ representations, nor do - they accept any liabilities with respect to them. --%>
 	<acme:form-textbox code="entrepreneur.application.form.label.moneyOffer" path="moneyOffer" readonly="true" />
 	<acme:form-textbox code="entrepreneur.application.form.label.investmentRound" path="investmentRound.ticker" readonly="true" />
 	<acme:form-textbox code="entrepreneur.application.form.label.investor" path="investor.firmName" readonly="true" />
-	<acme:form-select code="entrepreneur.application.form.label.status" path="status">
-		<br>
-		<acme:form-option code="entrepreneur.application.form.label.status.pending" value="pending" />
-		<acme:form-option code="entrepreneur.application.form.label.status.accepted" value="accepted" />
-		<acme:form-option code="entrepreneur.application.form.label.status.rejected" value="rejected" />
-	</acme:form-select>
-
 	<acme:form-return code="entrepreneur.application.form.button.return" />
 </acme:form>

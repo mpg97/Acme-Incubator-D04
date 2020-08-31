@@ -3,6 +3,7 @@ package acme.entities.investmentround;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -16,6 +17,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.roles.Entrepreneur;
@@ -49,10 +51,13 @@ public class InvestmentRound extends DomainEntity {
 	private KindOfRound			kindRound;
 
 	@NotBlank
+	@Column(length = 50)
+	@Length(max = 50)
 	private String				title;
 
 	@NotBlank
 	@Column(length = 1024)
+	@Length(max = 1024)
 	private String				description;
 
 	@NotNull
@@ -64,11 +69,11 @@ public class InvestmentRound extends DomainEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = false, cascade = CascadeType.ALL)
 	private Entrepreneur		entrepreneur;
 
 	@Valid
-	@OneToOne(optional = false)
+	@OneToOne(optional = false, cascade = CascadeType.ALL)
 	private WorkProgramme		workProgramme;
 
 

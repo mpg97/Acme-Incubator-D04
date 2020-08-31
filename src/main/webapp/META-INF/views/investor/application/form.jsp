@@ -12,6 +12,5 @@ representations, nor do - they accept any liabilities with respect to them. --%>
 	<acme:form-textbox code="investor.application.form.label.ticker" path="ticker" />
 	<acme:form-textbox code="investor.application.form.label.statement" path="statement" />
 	<acme:form-money code="investor.application.form.label.moneyOffer" path="moneyOffer" />
-	<acme:form-submit test="${command == 'create'}" code="administrator.tool.form.button.create" action="/investor/application/create?investmentRoundId=${param.investmentRoundId}" />
 	<acme:form-return code="investor.application.form.button.return" />
 </acme:form>

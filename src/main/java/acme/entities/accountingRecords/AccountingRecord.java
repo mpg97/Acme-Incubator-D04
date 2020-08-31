@@ -1,10 +1,12 @@
 
-package acme.entities.activity;
+package acme.entities.accountingRecords;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -14,7 +16,8 @@ import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 
-import acme.framework.datatypes.Money;
+import acme.entities.investmentround.InvestmentRound;
+import acme.entities.roles.Bookkeeper;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,11 +25,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Activity extends DomainEntity {
+public class AccountingRecord extends DomainEntity {
 
-	/**
-	 *
-	 */
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
@@ -37,14 +37,22 @@ public class Activity extends DomainEntity {
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	private Date				start;
+	private Date				creationMoment;
+
+	@NotBlank
+	@Column(length = 1024)
+	@Length(max = 1024)
+	private String				body;
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				end;
+	private AccountingStatus	status;
 
 	@Valid
-	@NotNull
-	private Money				budget;
+	@ManyToOne(optional = false, cascade = CascadeType.ALL)
+	private InvestmentRound		investmentRound;
+
+	@Valid
+	@ManyToOne(optional = false, cascade = CascadeType.ALL)
+	private Bookkeeper			bookkeeper;
 
 }
