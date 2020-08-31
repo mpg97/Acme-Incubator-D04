@@ -515,7 +515,7 @@
 		<property name="statement" value="PENDING" />
 		<property name="moneyOffer" value="€ 1894.37" />
 		<property name="investmentRound" ref="investmentRound03" />
-		<property name="investor" ref="investor1" />
+		<property name="investor" ref="investor2" />
 	</bean>
 
 	<bean name="investorUserAccount1" class="acme.framework.entities.UserAccount">
@@ -546,6 +546,36 @@
 		<property name="sector" ref="Sector01" />
 		<property name="profile" value="Example" />
 		<property name="userAccount" ref="investorUserAccount1" />
+	</bean>
+
+	<bean name="investorUserAccount2" class="acme.framework.entities.UserAccount">
+		<property name="username" value="investor2" />
+		<property name="password" value="investor2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Investor" />
+				<property name="surname" value="Cool" />
+				<property name="email" value="investor2@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="investor2" />
+				<ref bean="investorAuthenticated2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="investorAuthenticated2" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="investorUserAccount2" />
+	</bean>
+
+	<bean name="investor2" class="acme.entities.roles.Investor">
+		<property name="firmName" value="Investor 2" />
+		<property name="sector" ref="Sector02" />
+		<property name="profile" value="Example 2" />
+		<property name="userAccount" ref="investorUserAccount2" />
 	</bean>
 	
 	<bean name="bookkeeperUserAccount1" class="acme.framework.entities.UserAccount">
