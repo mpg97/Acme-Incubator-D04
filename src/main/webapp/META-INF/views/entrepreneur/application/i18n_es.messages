@@ -18,7 +18,7 @@ entrepreneur.application.form.label.investor = Nombre de inversor:
 entrepreneur.application.form.button.return = Volver
 
 entrepreneur.application.list.label.ticker = Ticker
-entrepreneur.application.list.label.ticker = Título
+entrepreneur.application.list.label.title = Título
 entrepreneur.application.list.label.creation = Fecha de creación
 entrepreneur.application.list.label.statement = Declaración
 entrepreneur.application.list.label.moneyOffer = Oferta monetaria
