@@ -25,12 +25,5 @@
 	<acme:form-textbox code="authenticated.investment-round.form.label.kindRound" path="kindRound" />
 	<acme:form-textbox code="authenticated.investment-round.form.label.entrepreneur.startUpName" path="entrepreneur.startUpName" />
 
-	<security:authorize access="hasRole('Investor')">
-		<br>
-		<jstl:set var="investmentRoundId" value="${id}" />
-		<acme:form-submit method="get" code="authenticated.investment-round.form.button.application" action="/investor/application/create?investmentRoundId=${investmentRoundId}" />
-	</security:authorize>
-
-
 	<acme:form-return code="authenticated.investment-round.form.button.return" />
 </acme:form>
