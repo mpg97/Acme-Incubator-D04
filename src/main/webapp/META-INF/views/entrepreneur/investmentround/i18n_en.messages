@@ -27,6 +27,12 @@ entrepreneur.investment-round.list.label.moreInfo = More Info
 entrepreneur.investment-round.list.label.kindRound = Kind of Round
 entrepreneur.investment-round.list.label.entrepreneur.startUpName = Entrepreneur StartUp Name
 
+entrepreneur.investment-round.finalMode = It's on final mode
+
+entrepreneur.investment-round.error.spam = It's considered spam
+entrepreneur.investment-round.ticker.valid = Ticker is not valid
+entrepreneur.investment-round.finalMode.activity = You cannot convert in final mode without associate activities
+
 entrepreneur.application.form.label.status.seed = Seed
 entrepreneur.application.form.label.status.bridge = Bridge
 entrepreneur.application.form.label.status.seriesa = Series A

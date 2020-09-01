@@ -17,9 +17,11 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="entrepreneur.investment-round.list.label.title" path="title" width="40%"/>		
-	<acme:list-column code="entrepreneur.investment-round.list.label.ticker" path="ticker" width="20%"/>
-	<acme:list-column code="entrepreneur.investment-round.list.label.creationDate" path="creationDate" width="40%"/>
+	<acme:list-column code="bookkeeper.accounting-record.list.label.title" path="title" width="35%"/>
+	<acme:list-column code="bookkeeper.accounting-record.list.label.creationMoment" path="creationMoment" width="35%"/>
+	<acme:list-column code="bookkeeper.accounting-record.list.label.status" path="status" width="30%"/>	
 </acme:list>
+
+<acme:form-return code="bookkeeper.accounting-record.form.button.return" />
 
 

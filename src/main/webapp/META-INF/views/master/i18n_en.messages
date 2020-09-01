@@ -32,6 +32,12 @@ master.menu.entrepreneur.activity = Activity
 master.menu.investor = Investor
 master.menu.investor.applications = My applications
 
+# master.menu.bookkeeper #######################################################
+
+master.menu.bookkeeper = Bookkeeper
+master.menu.bookkeeper.investment-round.involved = Investment round involved list
+master.menu.bookkeeper.investment-round.not-involved = Investment round not involved list
+
 # master.menu #################################################################
 
 master.menu.home = Home

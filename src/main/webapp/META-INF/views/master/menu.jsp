@@ -62,6 +62,11 @@
 		<acme:menu-option code="master.menu.investor" access="hasRole('Investor')">
 			<acme:menu-suboption code="master.menu.investor.applications" action="/investor/application/list-mine" />
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.bookkeeper" access="hasRole('Bookkeeper')">
+			<acme:menu-suboption code="master.menu.bookkeeper.investment-round.involved" action="/bookkeeper/investment-round/list-involved" />
+			<acme:menu-suboption code="master.menu.bookkeeper.investment-round.not-involved" action="/bookkeeper/investment-round/list-not-involved" />
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/" />
