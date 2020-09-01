@@ -92,6 +92,8 @@ master.menu.authenticated.overture.actives = Active overtures
 master.menu.authenticated.challenge.actives = Active challenges
 master.menu.authenticated.challenge.investment-round = Active Investment Rounds
 
+master.menu.authenticated.challenge.discussion-forum = My discussion forums
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

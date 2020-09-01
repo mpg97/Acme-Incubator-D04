@@ -17,6 +17,7 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.Length;
 
 import acme.entities.discussionForum.DiscussionForum;
+import acme.framework.entities.Authenticated;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -45,9 +46,12 @@ public class Message extends DomainEntity {
 	@Length(max = 1024)
 	private String				body;
 
-	@NotNull
 	@Valid
 	@ManyToOne(optional = false, cascade = CascadeType.ALL)
 	private DiscussionForum		discussionForum;
+
+	@Valid
+	@ManyToOne(optional = false, cascade = CascadeType.ALL)
+	private Authenticated		author;
 
 }

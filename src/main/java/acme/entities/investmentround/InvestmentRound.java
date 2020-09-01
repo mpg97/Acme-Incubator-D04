@@ -77,12 +77,16 @@ public class InvestmentRound extends DomainEntity {
 	private WorkProgramme		workProgramme;
 
 
+	@NotNull(message = "{acme.validation.investment.round.total}")
 	@Transient
 	private Money getTotalAmount() {
 		Double total = this.workProgramme.getActivities().stream().mapToDouble(a -> a.getBudget().getAmount()).sum();
 		Money result = new Money();
 		result.setAmount(total);
 		result.setCurrency("€");
+		if (total > this.amount.getAmount()) {
+			result = null;
+		}
 		return result;
 
 	}

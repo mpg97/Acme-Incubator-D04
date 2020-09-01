@@ -48,7 +48,7 @@ public class AdministratorConfigurationUpdateService implements AbstractUpdateSe
 		assert request != null;
 
 		String language = request.getLocale().getLanguage();
-		return this.repository.findByLanguage(language);
+		return this.repository.findConfigurationByLanguage(language);
 
 	}
 

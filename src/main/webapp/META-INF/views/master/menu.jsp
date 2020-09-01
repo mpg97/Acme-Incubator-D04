@@ -88,8 +88,9 @@
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.authenticated.challenge.actives" action="/authenticated/challenge/list-active" />
 			<acme:menu-separator />
-			<acme:menu-suboption code="master.menu.authenticated.challenge.investment-round"
-				action="/authenticated/investment-round/list-active" />
+			<acme:menu-suboption code="master.menu.authenticated.challenge.investment-round" action="/authenticated/investment-round/list-active" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.authenticated.challenge.discussion-forum" action="/authenticated/discussion-forum/list-involved" />
 		</acme:menu-option>
 
 	</acme:menu-left>

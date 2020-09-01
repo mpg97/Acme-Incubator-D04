@@ -485,7 +485,7 @@
 	<bean id="application01" class="acme.entities.application.Application">
 		<property name="ticker" value="TEC-17-000001" />
 		<property name="creation" value="2017/6/13 15:56" />
-		<property name="statement" value="PENDING" />
+		<property name="statement" value="REJECTED" />
 		<property name="moneyOffer" value="€ 400" />
 		<property name="investmentRound" ref="investmentRound01" />
 		<property name="investor" ref="investor1" />
@@ -494,7 +494,7 @@
 	<bean id="application02" class="acme.entities.application.Application">
 		<property name="ticker" value="TEC-19-000002" />
 		<property name="creation" value="2019/11/23 19:50" />
-		<property name="statement" value="ACCEPTED" />
+		<property name="statement" value="PENDING" />
 		<property name="moneyOffer" value="€ 950.65" />
 		<property name="investmentRound" ref="investmentRound01" />
 		<property name="investor" ref="investor1" />
@@ -503,7 +503,7 @@
 	<bean id="application03" class="acme.entities.application.Application">
 		<property name="ticker" value="TEC-19-000003" />
 		<property name="creation" value="2019/12/20 18:00" />
-		<property name="statement" value="ACCEPTED" />
+		<property name="statement" value="PENDING" />
 		<property name="moneyOffer" value="€ 1287.60" />
 		<property name="investmentRound" ref="investmentRound02" />
 		<property name="investor" ref="investor1" />
@@ -512,7 +512,7 @@
 	<bean id="application04" class="acme.entities.application.Application">
 		<property name="ticker" value="BUS-19-000004" />
 		<property name="creation" value="2019/10/02 18:00" />
-		<property name="statement" value="PENDING" />
+		<property name="statement" value="ACCEPTED" />
 		<property name="moneyOffer" value="€ 1894.37" />
 		<property name="investmentRound" ref="investmentRound03" />
 		<property name="investor" ref="investor2" />
@@ -619,6 +619,12 @@
 		</property>
 	</bean>
 	
+	<bean name="discussionForum03" class="acme.entities.discussionForum.DiscussionForum">
+		<property name="investmentRound">
+			<ref bean="investmentRound03"/>
+		</property>
+	</bean>
+	
 	<bean name="message01" class="acme.entities.messages.Message">
 		<property name="title" value="My first message" />
 		<property name="creationMoment" value="2020/1/10 11:20" />
@@ -626,6 +632,9 @@
 		<property name="body" value="My first message in this forum" />
 		<property name="discussionForum">
 			<ref bean="discussionForum01"/>
+		</property>
+		<property name="author">
+			<ref bean="entrepreneur1Authenticated"/>
 		</property>
 	</bean>
 	
@@ -637,6 +646,9 @@
 		<property name="discussionForum">
 			<ref bean="discussionForum01"/>
 		</property>
+		<property name="author">
+			<ref bean="entrepreneur1Authenticated"/>
+		</property>
 	</bean>
 	
 	<bean name="message03" class="acme.entities.messages.Message">
@@ -646,6 +658,9 @@
 		<property name="body" value="My third message in this forum" />
 		<property name="discussionForum">
 			<ref bean="discussionForum01"/>
+		</property>
+		<property name="author">
+			<ref bean="entrepreneur1Authenticated"/>
 		</property>
 	</bean>
 	
@@ -657,6 +672,9 @@
 		<property name="discussionForum">
 			<ref bean="discussionForum01"/>
 		</property>
+		<property name="author">
+			<ref bean="investorAuthenticated1"/>
+		</property>
 	</bean>
 	
 	<bean name="message05" class="acme.entities.messages.Message">
@@ -667,6 +685,9 @@
 		<property name="discussionForum">
 			<ref bean="discussionForum02"/>
 		</property>
+		<property name="author">
+			<ref bean="entrepreneur1Authenticated"/>
+		</property>
 	</bean>
 	
 	<bean name="message06" class="acme.entities.messages.Message">
@@ -675,7 +696,23 @@
 		<property name="tags" value="web,programming"/> 
 		<property name="body" value="My sixth message in this forum" />
 		<property name="discussionForum">
-			<ref bean="discussionForum02"/>
+			<ref bean="discussionForum03"/>
+		</property>
+		<property name="author">
+			<ref bean="investorAuthenticated2"/>
+		</property>
+	</bean>
+	
+	<bean name="message07" class="acme.entities.messages.Message">
+		<property name="title" value="My seventh message" />
+		<property name="creationMoment" value="2020/6/07 19:00" />
+		<property name="tags" value="web,programming,developer"/> 
+		<property name="body" value="My seventh message in this forum" />
+		<property name="discussionForum">
+			<ref bean="discussionForum03"/>
+		</property>
+		<property name="author">
+			<ref bean="entrepreneur2Authenticated"/>
 		</property>
 	</bean>
 	

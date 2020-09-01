@@ -38,7 +38,7 @@ public class AdministratorConfigurationShowService implements AbstractShowServic
 		assert request != null;
 
 		String language = request.getLocale().getLanguage();
-		return this.repository.findByLanguage(language);
+		return this.repository.findConfigurationByLanguage(language);
 
 	}
 

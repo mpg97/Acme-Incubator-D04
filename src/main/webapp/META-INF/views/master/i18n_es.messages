@@ -102,6 +102,8 @@ master.menu.authenticated.overture.actives = Propuestas activas
 master.menu.authenticated.challenge.actives = Desafios activos
 master.menu.authenticated.challenge.investment-round = Rondas de inversión activas
 
+master.menu.authenticated.challenge.discussion-forum = Mis foros de debate
+
 
 # master.menu.user-account ####################################################
 
