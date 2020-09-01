@@ -9,7 +9,7 @@ representations, nor do - they accept any liabilities with respect to them. --%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="entrepreneur.application.form.label.title" path="ticker" readonly="true" />
+	<acme:form-textbox code="entrepreneur.application.form.label.ticker" path="ticker" readonly="true" />
 	<acme:form-textbox code="entrepreneur.application.form.label.creation" path="creation" readonly="true" />
 	<acme:form-textbox code="entrepreneur.application.form.label.statement" path="statement" readonly="true" />
 	<acme:form-textbox code="entrepreneur.application.form.label.moneyOffer" path="moneyOffer" readonly="true" />
