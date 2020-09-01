@@ -276,9 +276,6 @@
 		<property name="amount" value="€ 40000" />
 		<property name="kindRound" value="SEED" />
 		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
-		<property name="workProgramme">
-			<ref bean="workProgramme01" />
-		</property>
 
 	</bean>
 
@@ -291,9 +288,6 @@
 		<property name="amount" value="€ 78500" />
 		<property name="kindRound" value="SEED" />
 		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
-		<property name="workProgramme">
-			<ref bean="workProgramme02" />
-		</property>
 
 	</bean>
 
@@ -306,9 +300,6 @@
 		<property name="amount" value="€ 29500" />
 		<property name="kindRound" value="BRIDGE" />
 		<property name="entrepreneur" ref="entrepreneur2Entrepreneur" />
-		<property name="workProgramme">
-			<ref bean="workProgramme03" />
-		</property>
 
 	</bean>
 
@@ -319,7 +310,7 @@
 		<property name="start" value="2020/6/30 15:00" />
 		<property name="end" value="2021/6/13 15:56" />
 		<property name="budget" value="€ 400" />
-
+		<property name="workProgramme" ref="workProgramme01"/>
 	</bean>
 
 	<bean id="activity02" class="acme.entities.activity.Activity">
@@ -328,6 +319,7 @@
 		<property name="start" value="2019/9/07 18:20" />
 		<property name="end" value="2020/10/13 11:50" />
 		<property name="budget" value="€ 1550.75" />
+		<property name="workProgramme" ref="workProgramme01"/>
 
 	</bean>
 
@@ -337,6 +329,7 @@
 		<property name="start" value="2018/6/20 09:45" />
 		<property name="end" value="2019/1/01 10:00" />
 		<property name="budget" value="€ 315.10" />
+		<property name="workProgramme" ref="workProgramme02"/>
 
 	</bean>
 
@@ -346,6 +339,7 @@
 		<property name="start" value="2019/7/11 15:00" />
 		<property name="end" value="2020/6/05 19:35" />
 		<property name="budget" value="€ 629.99" />
+		<property name="workProgramme" ref="workProgramme01"/>
 
 	</bean>
 
@@ -355,6 +349,7 @@
 		<property name="start" value="2019/3/30 13:05" />
 		<property name="end" value="2019/4/24 22:50" />
 		<property name="budget" value="€ 850.50" />
+		<property name="workProgramme" ref="workProgramme02"/>
 
 	</bean>
 
@@ -364,6 +359,7 @@
 		<property name="start" value="2020/1/10 11:20" />
 		<property name="end" value="2020/2/29 08:40" />
 		<property name="budget" value="€ 40150.66" />
+		<property name="workProgramme" ref="workProgramme02"/>
 
 	</bean>
 
@@ -373,6 +369,7 @@
 		<property name="start" value="2020/1/10 11:20" />
 		<property name="end" value="2021/2/21 08:40" />
 		<property name="budget" value="€ 6190.35" />
+		<property name="workProgramme" ref="workProgramme01"/>
 
 	</bean>
 
@@ -382,42 +379,20 @@
 		<property name="start" value="2020/5/15 11:20" />
 		<property name="end" value="2021/9/01 08:40" />
 		<property name="budget" value="€ 8990.35" />
+		<property name="workProgramme" ref="workProgramme03"/>
 
 	</bean>
 
 	<bean id="workProgramme01" class="acme.entities.workProgramme.WorkProgramme">
-
-		<property name="activities">
-			<list>
-				<ref bean="activity01" />
-				<ref bean="activity02" />
-				<ref bean="activity04" />
-				<ref bean="activity07" />
-			</list>
-		</property>
-
+		<property name="investmentRound" ref="investmentRound01"/>
 	</bean>
 
 	<bean id="workProgramme02" class="acme.entities.workProgramme.WorkProgramme">
-
-		<property name="activities">
-			<list>
-				<ref bean="activity03" />
-				<ref bean="activity05" />
-				<ref bean="activity06" />
-			</list>
-		</property>
-
+		<property name="investmentRound" ref="investmentRound02"/>
 	</bean>
 
 	<bean id="workProgramme03" class="acme.entities.workProgramme.WorkProgramme">
-
-		<property name="activities">
-			<list>
-				<ref bean="activity08" />
-			</list>
-		</property>
-
+		<property name="investmentRound" ref="investmentRound03"/>
 	</bean>
 
 	<bean name="entrepreneur1UserAccount" class="acme.framework.entities.UserAccount">

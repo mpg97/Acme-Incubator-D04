@@ -7,10 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -21,7 +19,6 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.roles.Entrepreneur;
-import acme.entities.workProgramme.WorkProgramme;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -71,24 +68,5 @@ public class InvestmentRound extends DomainEntity {
 	@Valid
 	@ManyToOne(optional = false, cascade = CascadeType.ALL)
 	private Entrepreneur		entrepreneur;
-
-	@Valid
-	@OneToOne(optional = false, cascade = CascadeType.ALL)
-	private WorkProgramme		workProgramme;
-
-
-	@NotNull(message = "{acme.validation.investment.round.total}")
-	@Transient
-	private Money getTotalAmount() {
-		Double total = this.workProgramme.getActivities().stream().mapToDouble(a -> a.getBudget().getAmount()).sum();
-		Money result = new Money();
-		result.setAmount(total);
-		result.setCurrency("€");
-		if (total > this.amount.getAmount()) {
-			result = null;
-		}
-		return result;
-
-	}
 
 }

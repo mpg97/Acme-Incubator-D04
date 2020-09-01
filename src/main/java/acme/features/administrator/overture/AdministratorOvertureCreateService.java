@@ -74,7 +74,7 @@ public class AdministratorOvertureCreateService implements AbstractCreateService
 			errors.state(request, isPositive, "minMoney", "administrator.overture.money.min");
 
 			String currency = entity.getMinMoney().getCurrency();
-			Boolean isEUR = !currency.isEmpty() && currency != null && (currency.equals("EUR") || currency.equals("€"));
+			Boolean isEUR = !currency.isEmpty() && currency != null && currency.equals("€");
 			errors.state(request, isEUR, "minMoney", "administrator.overture.currency.minMoney");
 
 		}
@@ -90,7 +90,7 @@ public class AdministratorOvertureCreateService implements AbstractCreateService
 			errors.state(request, isPositive, "maxMoney", "administrator.overture.money.min");
 
 			String currency = entity.getMaxMoney().getCurrency();
-			Boolean isEUR = !currency.isEmpty() && currency != null && (currency.equals("EUR") || currency.equals("€"));
+			Boolean isEUR = !currency.isEmpty() && currency != null && currency.equals("€");
 			errors.state(request, isEUR, "maxMoney", "administrator.overture.currency.maxMoney");
 		}
 

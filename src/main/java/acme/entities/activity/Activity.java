@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -14,6 +15,7 @@ import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.workProgramme.WorkProgramme;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -46,5 +48,9 @@ public class Activity extends DomainEntity {
 	@Valid
 	@NotNull
 	private Money				budget;
+
+	@Valid
+	@ManyToOne(optional = false)
+	private WorkProgramme		workProgramme;
 
 }

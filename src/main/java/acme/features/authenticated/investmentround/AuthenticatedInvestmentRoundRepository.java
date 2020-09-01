@@ -17,7 +17,7 @@ public interface AuthenticatedInvestmentRoundRepository extends AbstractReposito
 	@Query("select n from InvestmentRound n where n.id = ?1")
 	InvestmentRound findInvestmentRoundById(int id);
 
-	@Query("SELECT DISTINCT i FROM InvestmentRound i INNER JOIN WorkProgramme as w ON i.workProgramme.id = w.id JOIN w.activities a WHERE a.end > ?1")
+	@Query("SELECT DISTINCT i FROM InvestmentRound i INNER JOIN WorkProgramme as w ON w.investmentRound.id = i.id INNER JOIN Activity as a ON w.id = a.workProgramme.id WHERE a.end>?1")
 	Collection<InvestmentRound> findAllActiveInvestmentRounds(Date d);
 
 }

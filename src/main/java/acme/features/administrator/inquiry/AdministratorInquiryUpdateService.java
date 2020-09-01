@@ -73,7 +73,7 @@ public class AdministratorInquiryUpdateService implements AbstractUpdateService<
 			errors.state(request, isPositive, "minMoney", "administrator.inquiry.money.min");
 
 			String currency = entity.getMinMoney().getCurrency();
-			Boolean isEUR = !currency.isEmpty() && currency != null && (currency.equals("EUR") || currency.equals("€"));
+			Boolean isEUR = !currency.isEmpty() && currency != null && currency.equals("€");
 			errors.state(request, isEUR, "minMoney", "administrator.inquiry.currency.minMoney");
 
 		}
@@ -89,7 +89,7 @@ public class AdministratorInquiryUpdateService implements AbstractUpdateService<
 			errors.state(request, isPositive, "maxMoney", "administrator.inquiry.money.min");
 
 			String currency = entity.getMaxMoney().getCurrency();
-			Boolean isEUR = !currency.isEmpty() && currency != null && (currency.equals("EUR") || currency.equals("€"));
+			Boolean isEUR = !currency.isEmpty() && currency != null && currency.equals("€");
 			errors.state(request, isEUR, "maxMoney", "administrator.inquiry.currency.maxMoney");
 		}
 

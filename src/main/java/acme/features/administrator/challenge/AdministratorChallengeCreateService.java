@@ -99,7 +99,7 @@ public class AdministratorChallengeCreateService implements AbstractCreateServic
 
 				String currency = rookieReward.getCurrency();
 
-				Boolean isEUR = currency != null ? currency.equals("EUR") || currency.equals("€") : launchError;
+				Boolean isEUR = currency != null ? currency.equals("€") : launchError;
 				errors.state(request, isEUR, "rookie.reward", "administrator.challenge.currency.money");
 			}
 
@@ -118,7 +118,7 @@ public class AdministratorChallengeCreateService implements AbstractCreateServic
 
 				String currency = averageReward.getCurrency();
 
-				Boolean isEUR = currency != null ? currency.equals("EUR") || currency.equals("€") : launchError;
+				Boolean isEUR = currency != null ? currency.equals("€") : launchError;
 				errors.state(request, isEUR, "average.reward", "administrator.challenge.currency.money");
 			}
 
@@ -137,7 +137,7 @@ public class AdministratorChallengeCreateService implements AbstractCreateServic
 
 				String currency = expertReward.getCurrency();
 
-				Boolean isEUR = currency != null ? currency.equals("EUR") || currency.equals("€") : launchError;
+				Boolean isEUR = currency != null ? currency.equals("€") : launchError;
 				errors.state(request, isEUR, "expert.reward", "administrator.challenge.currency.money");
 			}
 

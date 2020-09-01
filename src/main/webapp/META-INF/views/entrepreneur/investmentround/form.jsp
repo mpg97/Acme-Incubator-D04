@@ -22,17 +22,8 @@
 	<acme:form-textbox code="entrepreneur.investment-round.form.label.description" path="description" />
 	<acme:form-textbox code="entrepreneur.investment-round.form.label.amount" path="amount" />
 	<acme:form-textbox code="entrepreneur.investment-round.form.label.kindRound" path="kindRound" />
-	<acme:form-textbox code="entrepreneur.investment-round.form.label.kindRound" path="kindRound" />
-	<acme:form-select code="entrepreneur.investment-round.form.label.moreInfo" path="moreInfo">
-		<br>
-		<acme:form-option code="entrepreneur.application.form.label.status.seed" value="SEED" />
-		<acme:form-option code="entrepreneur.application.form.label.status.bridge" value="BRIDGE" />
-		<acme:form-option code="entrepreneur.application.form.label.status.seriesa" value="SERIESA" />
-		<acme:form-option code="entrepreneur.application.form.label.status.seriesb" value="SERIESB" />
-		<acme:form-option code="entrepreneur.application.form.label.status.seriesc" value="SERIESC" />
-		<acme:form-option code="entrepreneur.application.form.label.status.angel" value="ANGEL" />
-
-	</acme:form-select>
+	<acme:form-textbox code="entrepreneur.investment-round.form.label.moreInfo" path="moreInfo"/>
+		
 
 	<acme:form-textbox code="entrepreneur.investment-round.form.label.entrepreneur.startUpName" path="entrepreneur.startUpName" />
 

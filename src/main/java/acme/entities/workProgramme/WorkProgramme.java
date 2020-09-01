@@ -1,14 +1,11 @@
 
 package acme.entities.workProgramme;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
-import javax.validation.constraints.NotEmpty;
 
-import acme.entities.activity.Activity;
+import acme.entities.investmentround.InvestmentRound;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,10 +18,10 @@ public class WorkProgramme extends DomainEntity {
 	/**
 	 *
 	 */
-	private static final long		serialVersionUID	= 1L;
+	private static final long	serialVersionUID	= 1L;
 
-	@NotEmpty
-	@OneToMany
-	private List<@Valid Activity>	activities;
+	@Valid
+	@OneToOne(optional = false)
+	private InvestmentRound		investmentRound;
 
 }
